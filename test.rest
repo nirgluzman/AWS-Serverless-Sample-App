@@ -1,0 +1,10 @@
+@url = https://sca4hegqkh.execute-api.us-east-1.amazonaws.com/
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+    "name": "Nir",
+    "email": "example@example.com"
+}
