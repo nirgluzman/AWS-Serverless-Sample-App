@@ -1,0 +1,6 @@
+Tutorial: Getting Started with Serverless Framework
+https://www.youtube.com/watch?v=KQRGM9_eqIw
+
+
+My GitHub repo:
+git@github.com:nirgluzman/AWS-Serverless-Sample-App.git
