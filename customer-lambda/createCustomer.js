@@ -19,9 +19,10 @@ module.exports.handler = async event => {
 
   await dynamodb.put(putParams).promise();
 
-  console.log('Customer created');
+  console.log('New customer created');
 
   return {
-    statusCode: 201
+    statusCode: 201,
+    body: JSON.stringify({ message: 'New customer has been created' })
   };
 };

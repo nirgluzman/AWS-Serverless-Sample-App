@@ -1,4 +1,7 @@
-@url = https://sca4hegqkh.execute-api.us-east-1.amazonaws.com/
+@url = https://sca4hegqkh.execute-api.us-east-1.amazonaws.com
+
+###
+GET {{url}}/hello
 
 ###
 POST {{url}}
@@ -6,5 +9,11 @@ Content-Type: application/json
 
 {
     "name": "Nir",
-    "email": "example@example.com"
+    "email": "Nir@example.com"
 }
+
+###
+GET {{url}}/c3e05561-9c28-49e4-ad4e-ab06f0ce3099
+
+###
+GET {{url}}

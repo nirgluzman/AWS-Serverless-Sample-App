@@ -4,6 +4,7 @@ service: aws-node-http-api
 
 provider:
   name: aws
+  region: us-east-1
   runtime: nodejs18.x
   environment:
     DYNAMODB_CUSTOMER_TABLE: ${self:service}-${sls:stage}-customerTable
@@ -19,8 +20,27 @@ provider:
       Resource: 'arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:service}-${sls:stage}-customerTable'
 
 functions:
+  hello:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /hello
+          method: get
+
+  getAllCustomers:
+    handler: customer-lambda/getAllCustomers.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+  getCustomer:
+    handler: customer-lambda/getCustomer.handler
+    events:
+      - httpApi:
+          path: /{id}
+          method: get
   createCustomer:
-    handler: createCustomer.handler
+    handler: customer-lambda/createCustomer.handler
     events:
       - httpApi:
           path: /
